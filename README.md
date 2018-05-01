@@ -161,6 +161,22 @@ const stickybitsInstancetoBeUpdated = stickybits('selector');
 stickybitsInstancetoBeUpdated.update();
 ```
 
+Re-calculates each Stickybits instance's offsets (stickyStart, stickyStop).
+If the Stickybits implementer would like re-calculate offsets when the DOM window is resized or when the url changes. `.update()` can be invoked within an event listener.
+
+**Examples**
+```javascript
+// when the window is resized
+const stickybitsInstancetoBeUpdated = stickybits('selector');
+window.addEventListener('resize' () => {
+  stickybitsInstancetoBeUpdated.update();
+});
+// when the url hash changes
+window.addEventListener('hashchange' () => {
+  stickybitsInstancetoBeUpdated.update();
+});
+```
+
 ### StickyBits NoStyles
 
 To use StickyBits without inline styles except for `position: sticky` or `position: fixed`:
